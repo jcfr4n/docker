@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS `xnet` DEFAULT
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('root');
+
+CREATE USER IF NOT EXISTS `dbuser`@`%` IDENTIFIED BY 'dbuser';
+GRANT ALL PRIVILEGES ON xnet.* TO `dbuser`@`%`;
+FLUSH PRIVILEGES;
